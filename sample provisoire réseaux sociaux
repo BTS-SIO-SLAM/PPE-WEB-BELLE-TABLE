@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1; charset=UTF-8">
+    <meta name="description" content="">
+    <meta name="author" content="">
+	<title>BelleTable - Elegance a la Francaise</title>
+</head>
+<body>
+<p>Rejoignez nous sur les reseaux sociaux</p>
+<a href="http://twitter.com/share" target="_blank" class="twitter-share-button" 
+  data-count="vertical" data-via="Belle_TableSIO"><img src ="C:\Users\jesse\Downloads\twitter-182.png" height="3%" width="3%"></img></a>
+<script type="text/javascript" src="http://platform.twitter.com/widgets.js"></script>
+<a name="fb_share" type="box_count" href="https://www.facebook.com/Belle-Table-1113643383077898/" target="_blank"><img src ="C:\Users\jesse\Downloads\logofb.png" height="3%" width="3%"></img></a>
+<script src="http://static.ak.fbcdn.net/connect.php/js/FB.Share" type="text/javascript"></script>
+</body>
+</html>
+
+
