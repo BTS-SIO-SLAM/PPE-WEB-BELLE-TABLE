@@ -70,12 +70,14 @@ $result = $bdd->query('SELECT `t_panier`.*,`t_produit`.libelproduit,`t_produit`.
                                     <td class="totalcommande"><input type="checkbox" id="vaisselle" name="vaisselle" ></td>
                                 </tr>
                                 <tr>
-                                    <td class="totalcommande">Laundry (+30€)</td>
+                                    <td class="totalcommande">Laundry(+30€)</td>
+
                                     <td class="totalcommande"><input type="checkbox" id="lessive" name="lessive" ></td>
                                 </tr>
 							</tbody>
 						</table>
-                        <input type="submit" id="seconnecter" value="OK" onclick="document.forms[\'myform\'].submit();"/>
+                        <input type="submit" id="seconnecter" value="Ok" onclick="document.forms[\'myform\'].submit();"/>
+
 					</form>				
 					<br><br>
 				</div>

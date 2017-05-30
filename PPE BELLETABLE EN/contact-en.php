@@ -67,7 +67,8 @@ if(isset($_POST['email'])){
 						<input name="numero" type="text" value="" size="30"/><br><br>
 						<p>Your Message :</p>
 						<textarea name="message" rows="7" cols="35"></textarea><br><br>
-						<input type="submit" id="envoimail" value="Envoyer" onclick="document.forms[\'form\'].submit();"/>
+						<input type="submit" id="envoimail" value="Send" onclick="document.forms[\'form\'].submit();"/>
+
 					</form>
 					<br><br>
 				</div>
@@ -76,4 +77,6 @@ if(isset($_POST['email'])){
 	</div>
 <?php include('footer.php'); ?>
 </body>
+
 </html>
+

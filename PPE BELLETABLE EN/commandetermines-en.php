@@ -9,35 +9,32 @@ if(isset($_SESSION['login'])){
 	
 	$idclient = $_SESSION['login'];
 	
-    $result2 = $bdd->query('SELECT * FROM `t_commande` WHERE `numclient` LIKE '.$idclient.' AND `dateenvoi` IS NULL');
-	/*$query2 = 
-	$result2 = mysql_query($query2);
-	$num_rows2 = mysql_num_rows($result2);*/
+    $result2 = $bdd->query('SELECT * FROM `t_commande` WHERE `numclient` LIKE '.$idclient.' AND `dateenvoi` IS NOT NULL');
 	
 ?>
 <?php include('header-en.php'); ?>
-
 	<div class="contenupage">
 		<div class="container">
 				<div class="sousmenu">
 				<br/><br/><br/>
 					<div class="list-group">
-						<a href="commandeencours-en.php" class="list-group-item">Current Orders </a>
+						<a href="commandeencours-en.php" class="list-group-item">Current Orders</a>
 						<a href="commandetermines-en.php" class="list-group-item">Completed Orders</a>
 						<a href="coordonnees-en.php" class="list-group-item">Contact Informations</a>
-						<a href="deconnexion-en.php" class="list-group-item">Log Off</a>
+						<a href="deconnexion-en.php" class="list-group-item">Log off</a>
 					</div>
 				</div>
 				<br/><br/>
 				<div class="encadrecommande commandes">
-					<h2>&nbsp;Current Orders :</h2>
+					<h2>&nbsp;Completed Orders :</h2>
 					<hr>
 					<table align="center">
 						<thead>
 							<tr>
 								<th class="premiercommande">Order Number</th>
 								<th class="deuxiemecommande">Order Date</th>
-								<th class="troisiemecommande">ORder Price</th>
+								<th class="deuxiemecommande">Shipping Date</th>
+								<th class="troisiemecommande">Order Price</th>
 								<th class="quatriemecommande">Order Details</th>
 							</tr>
 						</thead>
@@ -45,13 +42,16 @@ if(isset($_SESSION['login'])){
 							<?php
 								while($row2 = $result2->fetch()){
 									$ladate = $row2['datecommande'];
-									$newDate = date("d/m/Y", strtotime($ladate));
+									$newDateCommande = date("d/m/Y", strtotime($ladate));
+									$ladate = $row2['dateenvoi'];
+									$newDateEnvoi = date("d/m/Y", strtotime($ladate));
 									echo'
 									<tr>
 										<td class="premier">'.$row2['numcommande'].'</td>
-										<td class="deuxieme">'.$newDate.'</td>
+										<td class="deuxieme">'.$newDateCommande.'</td>
+										<td class="deuxieme">'.$newDateEnvoi.'</td>
 										<td class="troisieme">'.$row2['prixcommande'].' €</td>
-										<td class="quatrieme"><input type="button" id="btnvoircommandes" value="Voir" onclick="location.href=\'detailcommande.php?idcommande='.$row2['numcommande'].'\';"></td>
+										<td class="quatrieme"><input type="button" id="btnvoircommandes" value="Voir" onclick="location.href=\'detailcommande-en.php?idcommande='.$row2['numcommande'].'\';"></td>
 									</tr>';
 								}
 							?>
@@ -60,11 +60,9 @@ if(isset($_SESSION['login'])){
 					<br/>
 				</div>
 		</div>
-	</div>
-		
+</div>
 	<?php include('footer.php'); ?>
 
 </body>
 
 </html>
-
